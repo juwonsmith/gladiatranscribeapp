@@ -4,11 +4,11 @@ export function useTranscription() {
   const [data, setData] = useState(null);
   const [isPending, setIsPending] = useState(null);
 
-  const transcribeAudio = async (selectedAudioFile) => {
+  const transcribeAudio = async (AudioFile) => {
     const apiUrl = "https://api.gladia.io/audio/text/audio-transcription";
     const formData = new FormData();
 
-    formData.append("audio", selectedAudioFile);
+    formData.append("audio", AudioFile);
     formData.append("toggle_diarization", "true");
     formData.append("toggle_noise_reduction", "true");
 
@@ -18,7 +18,7 @@ export function useTranscription() {
         method: "POST",
         body: formData,
         headers: {
-          "x-gladia-key": "331f70d0-21c7-4d7f-93e9-ecbcb58f4686",
+          "x-gladia-key": process.env.NEXT_PUBLIC_GLADIA_KEY,
         },
       });
 

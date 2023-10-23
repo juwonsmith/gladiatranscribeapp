@@ -25,13 +25,14 @@ export default function Home() {
         className="flex flex-col gap-4 items-center"
         onSubmit={handleSubmit}
       >
-        <label className="w-[calc(100%-1em)] flex flex-col gap-2 items-center justify-center bg-gradient-to-t from-green-300 to-gray-500 rounded-md p-4">
+        <label className="w-[calc(100%-2em)] flex flex-col gap-2 items-center justify-center bg-gradient-to-t from-green-300 to-gray-500 rounded-md p-4">
           <span className="font-mono text-white">Insert Audio:</span>
           <input
             type="file"
             name="audio"
-            accept="audio/*"
+            accept="audio/mpeg, audio/wav"
             onChange={handleFileChange}
+            className="mx-auto bg-gray-200 font-mono w-[calc(100%-1em)]"
           />
         </label>
         <button className="h-10 w-40 bg-gradient-to-tr from-slate-500 to-purple-300 hover:to-purple-700 rounded-md font-mono cursor-pointer text-white transition duration-300 transform hover:scale-105">

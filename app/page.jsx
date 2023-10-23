@@ -25,7 +25,7 @@ export default function Home() {
         className="flex flex-col gap-4 items-center"
         onSubmit={handleSubmit}
       >
-        <label className="flex flex-col md:flex-row gap-2 items-center justify-center bg-gradient-to-t from-green-300 to-gray-500 rounded-md p-4">
+        <label className="w-[calc(100%-1em)] flex flex-col gap-2 items-center justify-center bg-gradient-to-t from-green-300 to-gray-500 rounded-md p-4">
           <span className="font-mono text-white">Insert Audio:</span>
           <input
             type="file"
@@ -38,12 +38,12 @@ export default function Home() {
           Transcribe
         </button>
         {isPending && (
-          <div className="w-full rounded-2xl p-4 bg-purple-500 h-max text-white">
+          <div className="w-[calc(100%-2em)] rounded-2xl p-4 bg-purple-500 h-max text-white">
             <p className="font-mono">Transcribing..this might take a while</p>
           </div>
         )}
         {data && !isPending && (
-          <div className="w-full mt-4 rounded-2xl bg-gradient-to-tr from-purple-500 to-gray-950  overflow-hidden shadow-xl shadow-black text-white">
+          <div className="w-[calc(100%-2em)] mt-4 rounded-2xl bg-gradient-to-tr from-purple-500 to-gray-950  overflow-hidden shadow-xl shadow-black text-white">
             <h2 className="text-2xl p-4">Transcription:</h2>
             <div className="p-4">
               {data.map((item, index) => (

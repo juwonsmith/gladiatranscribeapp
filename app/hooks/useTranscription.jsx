@@ -11,6 +11,8 @@ export function useTranscription() {
     formData.append("audio", AudioFile);
     formData.append("toggle_diarization", "true");
     formData.append("toggle_noise_reduction", "true");
+    formData.append("target_translation_language", "english");
+    formData.append("toggle_direct_translate", "true");
 
     try {
       setIsPending(true);
